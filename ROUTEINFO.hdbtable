@@ -1,0 +1,12 @@
+table.schemaName = "USER";
+table.tableType = COLUMNSTORE;
+table.description = "ODATABLE";
+table.columns = [
+          {name = "CID"; nullable = false; sqlType = INTEGER;},
+          {name = "TRIP_ID"; sqlType = INTEGER;},
+          {name = "STATION"; sqlType = NVARCHAR;length=50;},
+          {name = "ARRIVAL_TIME"; sqlType = NVARCHAR;length=50;},
+          {name = "DEPARTURE_TIME"; sqlType = NVARCHAR;length=50;}
+          
+];
+table.primaryKey.pkcolumns = ["CID"];

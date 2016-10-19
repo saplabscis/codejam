@@ -1,0 +1,374 @@
+﻿
+
+insert into trips values (1,1,0);
+
+insert into trips values (1,2,1);
+
+
+INSERT INTO ROUTES VALUES(1, 3, 'Маршрут Автобус №1');
+
+INSERT INTO ROUTES VALUES(2, 3, 'Маршрут Автобус №2');
+
+
+insert into stop_times values (1, '8:00','8:02',1,1);
+
+insert into stop_times values (1, '8:07','8:08',2,2);
+
+insert into stop_times values (1, '8:12','8:13',3,3);
+
+insert into stop_times values (1, '8:17','8:18',4,4);
+
+insert into stop_times values (1, '8:22','8:23',5,5);
+
+insert into stop_times values (1, '8:25','8:27',6,6);
+
+insert into stop_times values (1, '8:33','8:34',7,7);
+
+insert into stop_times values (1, '8:41','8:42',8,8);
+
+insert into stop_times values (1, '8:49','8:50',9,9);
+
+insert into stop_times values (1, '8:51','8:52',10,10);
+
+insert into stop_times values (1, '9:01','9:02',11,11);
+
+insert into stop_times values (1, '9:15','9:16',12,12);
+
+insert into stop_times values (1, '9:23','8:24',13,13);
+
+
+insert into stop_times values (1, '9:29','9:30',15,14);
+
+insert into stop_times values (1, '9:37','9:38',16,15);
+
+
+insert into stop_times values (1, '9:40','9:41',17,16);
+
+
+insert into stop_times values (1, '9:47','9:48',18,17);
+
+insert into stop_times values (1, '9:55','9:56',19,18);
+
+
+insert into stop_times values (1, '10:01','10:02',20,19);
+
+insert into stop_times values (1, '10:15','10:16',21,20);
+
+
+insert into stop_times values (1, '10:29','10:30',22,21);
+
+insert into stop_times values (1, '10:40','10:41',23,22);
+
+insert into stop_times values (1, '10:50','10:51',24,23);
+
+
+insert into stop_times values (1, '11;00','11:01',25,24);
+
+insert into stop_times values (1, '11:10','11:11',26,25);
+
+insert into stop_times values (1, '11:20','11:21',27,26);
+
+insert into stop_times values (1, '11:30','11:31',28,27);
+
+
+insert into stop_times values (1, '11:42','11:43',29,28);
+
+insert into stop_times values (1, '11:47','11:48',102,29);
+
+insert into stop_times values (1, '11:50','11:55',103,30);
+
+
+
+
+insert into stop_times values (2, '15:50','15:50',1,30);
+
+insert into stop_times values (2, '15:47','15:48',2,29);
+
+insert into stop_times values (2, '15:39','15:40',3,28);
+
+insert into stop_times values (2, '15:30','15:31',4,27);
+
+insert into stop_times values (2, '15:19','15:20',5,26);
+
+insert into stop_times values (2, '15:05','15:10',6,25);
+
+insert into stop_times values (2, '14:55','14:56',7,24);
+
+insert into stop_times values (2, '14:48','14:49',8,23);
+
+insert into stop_times values (2, '14:38','14:39',9,22);
+
+insert into stop_times values (2, '14:29','14:30',10,21);
+
+insert into stop_times values (2, '14:20','14:21',11,20);
+
+insert into stop_times values (2, '14:15','14:16',12,19);
+
+insert into stop_times values (2, '14:10','14:11',13,18);
+
+
+insert into stop_times values (2, '14:05','14:06',15,17);
+
+insert into stop_times values (2, '13:58','13:59',16,16);
+
+
+insert into stop_times values (2, '13:49','13:50',17,15);
+
+
+insert into stop_times values (2, '13:40','13:41',18,14);
+insert into stop_times values (2, '13:30','13:31',19,13);
+
+
+insert into stop_times values (2, '13:28','13:29',20,12);
+
+insert into stop_times values (2, '13:21','13:22',21,11);
+
+
+insert into stop_times values (2, '13:19','13:20',22,10);
+
+insert into stop_times values (2, '13:10','13:11',23,9);
+
+insert into stop_times values (2, '13:02','13:03',24,8);
+
+
+insert into stop_times values (2, '12:49','12:50',25,7);
+
+insert into stop_times values (2, '12:40','12:41',26,6);
+
+insert into stop_times values (2, '12:34','12:35',27,5);
+
+insert into stop_times values (2, '12:25','12:26',28,4);
+
+
+insert into stop_times values (2, '12:18','12:19',29,3);
+
+insert into stop_times values (2, '12:07','12:12',102,2);
+
+insert into stop_times values (2, '12:00','12:05',103,1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO stops VALUES (1, 'Дербышки', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (2, 'Магазин Восток', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (3, 'Интернат (Дербышки)', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (4, 'Строительное училище', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (5, 'Нагорный', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (6, 'Ноксинская', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (7, 'Карьер', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (8, '2-й переезд (ул. Сибирский тракт)', 55.871846, 49.222);
+
+INSERT INTO stops VALUES (9, 'Халитова', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (10, 'Академика Арбузова', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (11, 'Сибирский тракт', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (12, 'Национальный архив', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (13, 'Попова', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (14, 'Сибирский тракт', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (15, 'Пионерская', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (16, 'Советская пл.', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (17, 'Октябрьский городок', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (18, 'Кооперативный институт', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (19, 'Абжалилова', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (20, 'ЦПКиО им. Горького', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (21, 'Шмидта', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (22, 'Калинина', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (23, 'Метро Суконная Слобода', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (24, 'Театр Кукол', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (25, 'Айдинова', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (26, 'Сквер Тукая', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (27, 'Театр им. Камала', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (28, 'Тукая', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (29, 'Татарстан', 55.871846, 49.222718);
+
+
+INSERT INTO stops VALUES (30, 'Метро Аметьево', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (31, 'Аметьево', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (32, 'Школа №14', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (33, 'Мичурина', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (34, 'Качалова', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (35, 'Филармония', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (36, 'Туфана Миннулина', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (37, 'Театр Кукол', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (38, 'Айдинова', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (39, 'Сквер Тукая', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (40, 'Театр им. Камала', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (41, 'Колхозный рынок (ул. Московская)', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (42, 'Чернышевского (ул. Московская)', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (43, 'Ж/д вокзал', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (44, 'Саид-Галеева', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (45, 'Серп и Молот', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (46, 'Урицкого', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (47, 'Адмиралтейская', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (48, 'Набережная (ул. Боевая)', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (49, 'Боевая', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (50, 'Слесарная', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (51, 'Товарный двор', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (52, 'Станция Лагерная', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (53, 'Водозабор', 55.871846, 49.222718);
+INSERT INTO stops VALUES (54, 'Поликлиника №4', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (55, 'Алтай', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (56, 'Переправа', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (57, 'Старое Аракчино', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (58, 'Запрогонная', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (59, 'Жилой массив Новое Аракчино', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (60, 'Затон', 55.871846, 49.222718);
+INSERT INTO stops VALUES (61, 'Гипсовый завод', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (62, 'Новостройка', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (63, 'Школа №8', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (64, 'Приволжская', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (65, 'Красная Горка', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (66, 'Богатырская', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (67, 'Привокзальная', 55.871846, 49.222718);
+
+
+
+INSERT INTO stops VALUES (68, 'Новая Сосновка', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (69, 'Машиностроителей', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (70, 'Машиностроителей-2', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (71, 'Жилой массив Нагорный', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (72, 'Жилой массив Нагорный-2', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (73, 'Таёжная', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (74, 'Магазин (Нагорный)', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (75, 'Школа №124', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (76, 'Круговая', 55.871846, 49.222718);
+INSERT INTO stops VALUES (77, 'Национальный архив', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (78, 'Попова', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (79, 'Пионерская', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (80, 'Советская пл.', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (81, 'Октябрьский городок', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (82, 'Кооперативный институт', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (83, 'Абжалилова', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (84, 'ЦПКиО им. Горького', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (85, 'Шмидта', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (86, 'Калинина', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (87, 'Метро Суконная Слобода', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (88, 'Филармония', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (89, 'Ипподромная', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (90, 'Халева', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (91, 'Казанская ярмарка', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (92, 'Танковая', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (93, 'Латышских Стрелков', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (94, 'Комарова', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (95, 'Карбышева (ул. Танковая)', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (96, 'Метро Горки', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (97, 'Мавлютова', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (98, 'Медучилище', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (99, 'Академика Парина', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (100, 'Деревня Универсиады (проспект Победы)', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (101, 'Южная', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (102, 'Автовокзал', 55.871846, 49.222718);
+
+INSERT INTO stops VALUES (103, 'Речной порт', 55.871846, 49.222718);

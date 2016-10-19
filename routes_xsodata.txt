@@ -1,0 +1,10 @@
+service {
+   "USER"."bus_advisor.tables::ROUTEINFO"                  
+  
+as "ROUTE_VIEW"                          
+    
+   
+with ( "CID", "TRIP_ID","STATION","ARRIVAL_TIME","DEPARTURE_TIME");            
+
+
+}

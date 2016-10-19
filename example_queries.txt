@@ -1,0 +1,5 @@
+select * from GET_ROUTES('Театр Кукол','ЦПКиО им. Горького');
+
+call PREPARE_ROUTEINFO('Театр Кукол','ЦПКиО им. Горького');
+
+https://ndbi067364trial.hanatrial.ondemand.com/bus_advisor/services/get_routes.xsjs?source=Театр Кукол&destination=ЦПКиО им. Горького

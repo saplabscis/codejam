@@ -1,0 +1,88 @@
+var nparams = $.request.parameters.length;
+
+
+
+if (nparams < 2) {
+             
+   
+
+          $.response.status = $.net.http.INTERNAL_SERVER_ERROR;
+
+}
+else 
+{    
+        
+var output = '';
+        
+
+try {
+               
+
+var src_station = $.request.parameters.get('source');
+               
+
+var dst_station = $.request.parameters.get('destination');
+
+          
+     //connect to default schema
+   
+            var conn = $.db.getConnection();
+   
+            var pstmtSelect = conn.prepareStatement('SELECT * from USER.GET_ROUTES(?,?);');
+               
+            pstmtSelect.setString(1,src_station);
+             
+            pstmtSelect.setString(2,dst_station);
+              
+            var rs = pstmtSelect.executeQuery();
+              
+ //build an Array of site JSON objects out of the result set
+         
+            var rows = [];
+               
+            while (rs.next()) {
+                
+                var row = {};
+                    
+                row.src = rs.getInteger(1);
+                  
+                row.dst = rs.getInteger(2);
+                  
+                row.trip_id = rs.getInteger(3);
+                   
+                rows.push(row);
+              
+             }
+                
+            output = output + JSON.stringify(rows);
+                   
+                
+ //close everything
+               
+            rs.close();
+              
+            pstmtSelect.close();
+            
+            conn.close();
+             
+             
+    //return the HTTP response. OK is used by default
+            
+            $.response.status = $.net.http.OK;
+               
+            $.response.contentType = "text/json";
+              
+            $.response.setBody(output);
+                   
+      
+  } catch (e) {
+               //log the error
+            
+ $.trace.fatal(e.message);
+               //return 501
+           
+ $.response.status = $.net.http.INTERNAL_SERVER_ERROR;
+       
+ }
+    
+}

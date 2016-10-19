@@ -1,0 +1,48 @@
+CREATE  FUNCTION get_routes(s_station NVARCHAR(100), d_station NVARCHAR(100))
+   
+
+RETURNS table (  src INTEGER, dst INTEGER, trip_id INTEGER, direction_id INTEGER)
+ 
+
+LANGUAGE SQLSCRIPT
+SQL SECURITY INVOKER AS 
+
+
+BEGIN
+   
+
+RETURN 
+
+select a.src, b.dst, a.trip_id, c.direction_id from 
+
+(
+
+select a.src, b.stop_sequence,b.trip_id from 
+
+(
+
+select stop_id as src from stops a where locate(a.stop_name,:s_station)>0
+
+) a inner join stop_times b on a.src = b.stop_id
+
+) a 
+
+inner join 
+
+(
+
+select a.dst, b.stop_sequence, b.trip_id from
+ 
+(
+
+select stop_id as dst from stops a where locate(a.stop_name,:d_station)>0
+
+) a inner join stop_times b on a.dst = b.stop_id
+
+) b on a.trip_id = b.trip_id and a.stop_sequence < b.stop_sequence
+
+inner join trips c on a.trip_id = c.trip_id;
+   
+
+
+END

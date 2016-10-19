@@ -1,0 +1,96 @@
+create procedure PREPARE_ROUTEINFO(src NVARCHAR(100), dst NVARCHAR(100)) 
+language sqlscript as
+
+src_station INTEGER;
+
+dst_station INTEGER;
+
+tid INTEGER;
+
+a_num INTEGER;
+
+b_num INTEGER;
+
+MAX_ID INTEGER:=0;
+
+cnt INTEGER;
+
+
+begin
+    
+    
+
+a = select top 1 trip_id, src, dst from GET_ROUTES(:src,:dst);  
+    
+    
+
+select trip_id into tid from :a;
+    
+select src into src_station from :a;
+    
+select dst into dst_station from :a;
+    
+    
+
+a_sequence =
+        
+select top 1 a.stop_sequence 
+ from stop_times a 
+inner join stops b on a.stop_id=b.stop_id 
+where a.trip_id=:tid and a.stop_id = :src_station;
+        
+   
+
+select stop_sequence into a_num from :a_sequence;    
+    
+    
+
+b_sequence = 
+        
+select top 1 a.stop_sequence
+ from stop_times a 
+inner join stops b on a.stop_id=b.stop_id  where a.trip_id=:tid and a.stop_id = :dst_station;
+    
+    
+
+select stop_sequence into b_num from :b_sequence;
+    
+    
+
+select count(*) into cnt from  "bus_advisor.tables::ROUTEINFO";
+    
+    
+
+IF :cnt > 0 THEN
+        
+
+select MAX(CID) into MAX_ID from "bus_advisor.tables::ROUTEINFO"; 
+    
+
+END IF;
+    
+    
+
+insert into "bus_advisor.tables::ROUTEINFO"(CID, TRIP_ID,STATION,ARRIVAL_TIME,DEPARTURE_TIME)
+    
+select row_num + :MAX_ID as CID, :tid as TRIP_ID, stop_name as STATION, 
+    arrival_time as ARRIVAL_TIME, departure_time as DEPARTURE_TIME 
+from
+    
+(    
+select stop_name, arrival_time, departure_time, ROW_NUMBER() over (partition by route_id) as row_num
+    from
+    
+(
+    
+select 1 as route_id, a.stop_id, a.arrival_time, a.departure_time, b.stop_name
+  from stop_times a 
+inner join stops b on a.stop_id=b.stop_id
+    where a.trip_id=:tid 
+    and a.stop_sequence between :a_num and :b_num order by stop_sequence
+    
+)
+    
+);
+
+end;

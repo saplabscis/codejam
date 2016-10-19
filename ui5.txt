@@ -1,0 +1,132 @@
+﻿	var oPage = new sap.m.Page({
+			title: "{i18n>title}",
+			content: []
+		});
+		
+		var oPanel_First = new sap.ui.commons.Panel({width: "100%"});
+		
+		var oPanel_Second = new sap.ui.commons.Panel({width: "100%"});
+		
+		var oMatrix = new sap.ui.commons.layout.MatrixLayout({layoutFixed: true, width: '300px', columns: 2});
+		oMatrix.setWidths('100px', '200px');
+		
+		//Create a header
+		var oCell = new sap.ui.commons.layout.MatrixLayoutCell({colSpan: 2});
+		oCell.addContent(new sap.ui.commons.TextView({design: sap.ui.commons.TextViewDesign.H1}));
+		oMatrix.createRow(oCell);
+		
+		//Create a form
+		var oLabel = new sap.ui.commons.Label({text: 'Откуда'});
+		var oSource = new sap.ui.commons.DropdownBox("Source");
+		oSource.setTooltip("Место отправления");
+		oSource.setEditable(true);
+		oSource.setWidth("200px");
+		var SourceItem = new sap.ui.core.ListItem("NULLVALUE_SOURCE");
+		SourceItem.setText("Театр Камала");
+		oSource.addItem(SourceItem);
+		oLabel.setLabelFor(oSource);
+		oMatrix.createRow(oLabel, oSource);
+		
+		oLabel = new sap.ui.commons.Label({text: 'Куда'});
+		var oDestination = new sap.ui.commons.DropdownBox("Destination");
+		oDestination.setTooltip("Место назначения");
+		oDestination.setEditable(true);
+		oDestination.setWidth("200px");
+		var DestinationItem = new sap.ui.core.ListItem("NULLVALUE_DESTINATION");
+		DestinationItem.setText("ЦПКио им. Горького");
+		oDestination.addItem(DestinationItem);
+	
+		oLabel.setLabelFor(oDestination);
+		oMatrix.createRow(oLabel, oDestination);
+		
+		//Create a standard divider
+		var oCell = new sap.ui.commons.layout.MatrixLayoutCell({colSpan: 2});
+		oCell.addContent(new sap.ui.commons.HorizontalDivider());
+		oMatrix.createRow(oCell);
+		
+		var oTable = new sap.ui.table.Table({
+  			id : "myTable",
+  			width : "100%",			
+  			title : "Маршруты",
+  			visibleRowCount : 5,
+  			editable : true
+  		});
+  		
+  		oTable.addColumn(new sap.ui.table.Column({
+  			label: new sap.ui.commons.Label({text: "Номер Автобуса №"}),
+  			template: new sap.ui.commons.TextField().bindProperty("value", "TRIP_ID")
+  		}));
+  		
+  		oTable.addColumn(new sap.ui.table.Column({
+  			label: new sap.ui.commons.Label({text: "Остановка"}),
+  			template: new sap.ui.commons.TextField().bindProperty("value", "STATION")
+  		}));
+  		
+  		oTable.addColumn(new sap.ui.table.Column({
+			label: new sap.ui.commons.Label({text: "Время прибытия"}),
+			template: new sap.ui.commons.TextField().bindProperty("value", "ARRIVAL_TIME")
+		}));
+		
+		oTable.addColumn(new sap.ui.table.Column({
+  			label: new sap.ui.commons.Label({text: "Время отправления"}),
+  			template: new sap.ui.commons.TextField().bindProperty("value", "DEPARTURE_TIME")
+  		}));
+		
+		//Create a button row
+		var oCell = new sap.ui.commons.layout.MatrixLayoutCell({colSpan: 2});
+		var oButton = new sap.ui.commons.Button({text: 'Найти маршрут', 
+		press: function() {
+		
+		//	var mConfig  = oController.getMetadata().getConfig();
+			var oModel = new sap.ui.model.odata.v2.ODataModel({serviceUrl: "/bus_advisor/odata/routes.xsodata/"});
+			
+			oModel.read("/ROUTE_VIEW", {
+			    method: "GET",
+			    success: function(data) {
+			      //  alert(JSON.stringify(data));
+			        oTable.bindRows("/ROUTE_VIEW");
+			    },
+			    error: function() {
+			 
+			    }
+			});
+	        oTable.setModel(oModel);
+			
+		}
+		});
+		oButton.addStyleClass("CustomMargin"); //Add some additional left margin
+		
+		oCell.addContent(oButton);
+		oMatrix.createRow(oCell);
+
+		var oSplitterH = new sap.ui.commons.Splitter("splitterH");
+		oSplitterH.setSplitterOrientation(sap.ui.commons.Orientation.horizontal);
+		oSplitterH.setSplitterPosition("50%");
+		oSplitterH.setMinSizeFirstPane("20%");
+		oSplitterH.setMinSizeSecondPane("30%");
+		oSplitterH.setWidth("100%");
+		oSplitterH.setHeight("100%");
+
+		//adding Labels to both panes
+		var oLabel1 = new sap.ui.commons.Label({text: ""});
+		oSplitterH.addFirstPaneContent(oLabel1);
+		var oLabel2 = new sap.ui.commons.Label({text: ""});
+		oSplitterH.addSecondPaneContent(oLabel2);
+		
+	
+  		
+  		oPanel_First.addContent(oMatrix);
+  		oPanel_First.setTitle(new sap.ui.core.Title({text: "Форма поиска маршрута"}));
+  		oPanel_Second.addContent(oTable);
+  		oPanel_Second.setTitle(new sap.ui.core.Title({text: "Список найденных маршрутов"}));
+  		oSplitterH.addFirstPaneContent(oPanel_First);
+  		oSplitterH.addFirstPaneContent(oPanel_Second);
+  	
+  		oPage.addContent(oSplitterH);
+
+		var app = new sap.m.App("myApp", {
+			initialPage: "oPage"
+		});
+		
+		app.addPage(oPage);
+		return app;
